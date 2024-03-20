@@ -1,8 +1,8 @@
-# Define constants for player symbols
+# for player symbols
 PLAYER_X = "X"
 PLAYER_O = "O"
 
-# Define the main function to start the game
+# main function to start the game
 def main():
     # Print a welcome message and instructions
     print("Welcome to Tic Tac Toe!")
@@ -10,7 +10,7 @@ def main():
     print("Let's start!")
 
     # Create the game board
-    board = [" " for _ in range(9)]  # Use a list to represent the board
+    board = [" " for _ in range(9)]  # list to represent the board
 
     # Print the initial board state
     print_board(board)
@@ -24,7 +24,7 @@ def main():
         # Update the board with the player's move
         board[move] = current_player
 
-        # Print the updated board state
+        # Print updated board state
         print_board(board)
 
         # Check for win or draw
@@ -38,7 +38,7 @@ def main():
         # Switch to the other player
         current_player = PLAYER_O if current_player == PLAYER_X else PLAYER_X
 
-# Define a function to print the game board
+# function to print the game board
 def print_board(board):
     # Print the board with row and column indices
     for i in range(3):
@@ -46,7 +46,7 @@ def print_board(board):
         if i < 2:
             print("-" * 5)
 
-# Define a function to get player's move
+# function to get player's move
 def get_move(board, player):
     while True:
         try:
@@ -58,7 +58,7 @@ def get_move(board, player):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
-# Define a function to check for win
+# function to check for win
 def check_win(board, player):
     winning_combinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Rows
@@ -70,7 +70,7 @@ def check_win(board, player):
             return True
     return False
 
-# Define a function to check for draw
+# function to check for draw
 def check_draw(board):
     return " " not in board
 
